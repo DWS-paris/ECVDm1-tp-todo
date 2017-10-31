@@ -2,9 +2,18 @@
 let express = require('express');
 let router = express.Router();
 
+// Importer le service
+let myService = require('../service/todo.service');
+
 // Configuration de la route principale => http://localhost:8080/api/
 router.get('/', (req, res, next) => {
-   res.json({ res: 'Bienvenue dans votre API' })
+
+    myService.getAll(data => {
+        console.log(data)
+        res.json(data)
+    })
+
+   
 });
 
 // Export du module
