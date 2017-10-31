@@ -7,7 +7,6 @@ let myService = require('../service/todo.service');
 
 // Configuration de la route principale => http://localhost:8080/api/
 router.get('/', (req, res, next) => {
-
     myService.getAll(data => res.json(data));
 });
 
